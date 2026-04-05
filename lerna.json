@@ -1,15 +1,10 @@
 {
   "command": {
     "publish": {
-      "allowBranch": [
-        "main",
-        "release-*"
-      ],
+      "allowBranch": ["main", "release-*"],
       "conventionalCommits": true
     }
   },
-  "packages": [
-    "packages/*"
-  ],
-  "version": "0.0.0"
+  "packages": ["packages/*"],
+  "version": "1.0.0"
 }
