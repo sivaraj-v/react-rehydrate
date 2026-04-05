@@ -11,6 +11,8 @@ It allows you to declare React components directly in your static HTML using sim
 
 `react-rehydrate` is intended to make it possible to use React components on these legacy systems, _without changing the way you write your React components_. It provides tools to simplify the mapping from `data-` attributes into React props, and _can even handle React children_.
 
+![React Rehydrate Infographics](./infographics.png)
+
 ## Installation
 
 ```bash
