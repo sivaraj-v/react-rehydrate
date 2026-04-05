@@ -1,0 +1,16 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "jsRules": {},
+  "linterOptions": {
+    "exclude": ["**/lib/**"]
+  },
+  "rules": {
+    "no-implicit-dependencies": [true, "dev"],
+    "no-submodule-imports": [true, "react-dom/client"],
+    "prettier": true
+  },
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ]
+}

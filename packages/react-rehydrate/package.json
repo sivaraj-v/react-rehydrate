@@ -1,0 +1,57 @@
+{
+  "name": "@sivaraj-v/react-rehydrate",
+  "version": "0.0.0",
+  "description": "Convert regions of markup into React, with custom callbacks",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "author": {
+    "name": "Sivaraj.v",
+    "url": "https://www.linkedin.com/in/sivaraj-v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sivaraj-v/react-rehydrate.git"
+  },
+  "homepage": "https://github.com/sivaraj-v/react-rehydrate",
+  "bugs": {
+    "url": "https://github.com/sivaraj-v/react-rehydrate/issues"
+  },
+  "keywords": [
+    "react",
+    "rehydrate",
+    "static html",
+    "markup to react",
+    "html components",
+    "legacy integration",
+    "cms react",
+    "progressive enhancement",
+    "server side rendering",
+    "hydration",
+    "isomorphic",
+    "universal js",
+    "javascript templating",
+    "frontend framework",
+    "data attributes",
+    "component library",
+    "islands architecture",
+    "partial hydration",
+    "interactive islands"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc"
+  },
+  "dependencies": {
+    "@sivaraj-v/dom-element-to-react": "1.0.0"
+  },
+  "peerDependencies": {
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  }
+}

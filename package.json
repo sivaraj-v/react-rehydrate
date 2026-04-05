@@ -1,0 +1,87 @@
+{
+  "name": "react-rehydrate-workspace",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": {
+    "name": "Sivaraj.v",
+    "url": "https://www.linkedin.com/in/sivaraj-v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sivaraj-v/react-rehydrate.git"
+  },
+  "homepage": "https://github.com/sivaraj-v/react-rehydrate",
+  "bugs": {
+    "url": "https://github.com/sivaraj-v/react-rehydrate/issues"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "compile": "lerna run compile",
+    "cz": "git-cz",
+    "examples:build": "yarn --cwd examples build",
+    "examples:dev": "yarn --cwd examples dev",
+    "examples:preview": "yarn --cwd examples preview",
+    "format": "prettier **/*.js **/*.ts !**/lib/** --write",
+    "postinstall": "npm-run-all compile",
+    "lint": "npm-run-all lint:*",
+    "lint:ts": "tslint -c tslint.json './packages/**/*.{ts,tsx}'",
+    "release": "lerna version",
+    "pretest": "npm-run-all lint",
+    "test": "jest",
+    "publish:github": "bash ./scripts/publish.sh"
+  },
+  "dependencies": {
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^7.1.2",
+    "@commitlint/travis-cli": "^7.2.1",
+    "@types/jest": "^29.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "2.1.0",
+    "gh-pages": "^6.0.0",
+    "husky": "^1.2.1",
+    "jest-environment-jsdom": "^30.0.0",
+    "lerna": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.3",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^5.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(ts|tsx)$": ["ts-jest", {
+        "tsconfig": "tsconfig.json"
+      }]
+    },
+    "testMatch": [
+      "**/__tests__/*.+(ts|tsx|js)"
+    ],
+    "testPathIgnorePatterns": ["/lib/"],
+    "coveragePathIgnorePatterns": ["/lib/"]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "workspaces": [
+    "packages/*",
+    "examples"
+  ]
+}
