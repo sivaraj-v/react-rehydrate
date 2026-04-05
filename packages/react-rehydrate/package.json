@@ -1,6 +1,6 @@
 {
   "name": "@sivaraj-v/react-rehydrate",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Convert regions of markup into React, with custom callbacks",
   "main": "lib/index.js",
   "publishConfig": {
