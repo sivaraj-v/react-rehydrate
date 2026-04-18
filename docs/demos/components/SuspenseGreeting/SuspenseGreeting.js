@@ -21,7 +21,9 @@ const SuspenseGreeting = ({ headline, message }) => (
     <Suspense
       fallback={
         <>
-          <p className="SuspenseGreeting-eyebrow">Loading interactive module...</p>
+          <p className="SuspenseGreeting-eyebrow">
+            Loading interactive module...
+          </p>
           <h2>{headline}</h2>
           <p>Preparing the client bundle for this panel.</p>
         </>

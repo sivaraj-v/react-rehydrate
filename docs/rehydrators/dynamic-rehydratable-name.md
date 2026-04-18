@@ -1,10 +1,3 @@
----
-name: Determining data-rehydratable-name
-
-menu: Rehydrators
-order: 2
----
-
 # Determining data-rehydratable-name from the markup
 
 In the previous examples, you'll notice that the `data-rehydratable-name` needs to exist in three places: inside your component definition, in the markup that you integrate into your templates, and as a key in the list of rehydrators you pass to `react-rehydrate`.

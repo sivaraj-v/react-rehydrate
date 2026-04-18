@@ -1,14 +1,7 @@
----
-name: A simple rehydrator
-
-order: 10
-menu: Rehydrators
-route: /rehydrators/simple
----
 
 # A simple rehydrator
 
-> A working version of this can be seen in the [`ShowMoreText` demo](/demo/ShowMoreText)
+> A working version of this can be seen in the [ShowMoreText demo](/demos/show-more-text)
 
 The simplest rehydrators work on _leaf components_ - in other words, a React component that doesn't use `this.props.children`.
 

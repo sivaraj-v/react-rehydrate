@@ -3,9 +3,15 @@ import React, { useReducer } from "react";
 function counterReducer(state, action) {
   switch (action.type) {
     case "increment":
-      return { count: state.count + 1, history: [...state.history, state.count] };
+      return {
+        count: state.count + 1,
+        history: [...state.history, state.count]
+      };
     case "decrement":
-      return { count: state.count - 1, history: [...state.history, state.count] };
+      return {
+        count: state.count - 1,
+        history: [...state.history, state.count]
+      };
     case "undo": {
       if (state.history.length === 0) return state;
       const previous = state.history[state.history.length - 1];
@@ -34,7 +40,9 @@ const UndoCounter = ({ title, initialCount }) => {
       <h2>{title}</h2>
       <p className="UndoCounter-value">{state.count}</p>
       <div className="UndoCounter-controls">
-        <button onClick={() => dispatch({ type: "decrement" })}>&#x2212;</button>
+        <button onClick={() => dispatch({ type: "decrement" })}>
+          &#x2212;
+        </button>
         <button onClick={() => dispatch({ type: "increment" })}>+</button>
         <button
           disabled={state.history.length === 0}
@@ -42,7 +50,9 @@ const UndoCounter = ({ title, initialCount }) => {
         >
           Undo
         </button>
-        <button onClick={() => dispatch({ type: "reset", payload: initialCount })}>
+        <button
+          onClick={() => dispatch({ type: "reset", payload: initialCount })}
+        >
           Reset
         </button>
       </div>

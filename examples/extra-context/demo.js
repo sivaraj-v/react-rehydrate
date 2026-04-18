@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 
 const AdminDashboard = ({ user }) => (
-  <section className="ContextCard ContextCard--admin" data-rehydratable="ContextAware">
+  <section
+    className="ContextCard ContextCard--admin"
+    data-rehydratable="ContextAware"
+  >
     <h2>Admin Dashboard</h2>
     <p>Welcome, {user.name}. You have full access.</p>
     <ul>
@@ -13,7 +16,10 @@ const AdminDashboard = ({ user }) => (
 );
 
 const BetaFeature = ({ user }) => (
-  <section className="ContextCard ContextCard--beta" data-rehydratable="ContextAware">
+  <section
+    className="ContextCard ContextCard--beta"
+    data-rehydratable="ContextAware"
+  >
     <h2>Beta Experience</h2>
     <p>Hi {user.name}, beta features are enabled for your account.</p>
     <p>Try: new search, custom filters, and preview widgets.</p>
@@ -21,7 +27,10 @@ const BetaFeature = ({ user }) => (
 );
 
 const StandardComponent = ({ user }) => (
-  <section className="ContextCard ContextCard--standard" data-rehydratable="ContextAware">
+  <section
+    className="ContextCard ContextCard--standard"
+    data-rehydratable="ContextAware"
+  >
     <h2>Standard Dashboard</h2>
     <p>Hello {user.name}, you are using the default experience.</p>
   </section>
@@ -56,8 +65,8 @@ const ContextLegend = ({ user, features }) => (
       {user.role === "admin"
         ? " admin"
         : features.betaFeatures
-          ? " beta"
-          : " standard"}
+        ? " beta"
+        : " standard"}
     </p>
   </section>
 );
@@ -97,10 +106,17 @@ const AnalyticsTracker = ({ enabled, config, user }) => {
   );
 };
 
-const analyticsTrackerRehydrator = async (domNode, rehydrateChildren, extra) => {
+const analyticsTrackerRehydrator = async (
+  domNode,
+  rehydrateChildren,
+  extra
+) => {
   const user = extra.user || { name: "Guest", role: "viewer" };
   const features = extra.features || { analytics: false };
-  const config = extra.config || { environment: "development", trackingId: "demo-local" };
+  const config = extra.config || {
+    environment: "development",
+    trackingId: "demo-local"
+  };
 
   return (
     <AnalyticsTracker

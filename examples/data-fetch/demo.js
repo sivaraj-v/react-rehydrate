@@ -76,7 +76,8 @@ const DataFetchCard = ({ productId, fallbackTitle }) => {
           <h2>{data.name}</h2>
           <p>{data.description}</p>
           <p>
-            Status: <strong>{data.status}</strong> &mdash; Updated: {data.updatedAt}
+            Status: <strong>{data.status}</strong> &mdash; Updated:{" "}
+            {data.updatedAt}
           </p>
         </>
       )}

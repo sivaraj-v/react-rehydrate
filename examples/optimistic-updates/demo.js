@@ -49,8 +49,8 @@ const OptimisticComments = ({ heading }) => {
     >
       <h2>{heading}</h2>
       <p>
-        New comments appear instantly with <code>useOptimistic</code>, then settle
-        when the simulated server save completes.
+        New comments appear instantly with <code>useOptimistic</code>, then
+        settle when the simulated server save completes.
       </p>
       <form onSubmit={submit}>
         <input

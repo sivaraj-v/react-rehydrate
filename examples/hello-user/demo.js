@@ -4,7 +4,11 @@ const HelloUser = ({ userName }) => (
   <h2 data-rehydratable="HelloUser">Hello, {userName}!</h2>
 );
 
-const helloUserRehydrator = async (domNode, rehydrateChildren, { userName }) => {
+const helloUserRehydrator = async (
+  domNode,
+  rehydrateChildren,
+  { userName }
+) => {
   return <HelloUser userName={userName} />;
 };
 

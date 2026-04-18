@@ -1,13 +1,6 @@
----
-name: Using rehydrateChildren
-
-menu: Rehydrators
-order: 8
----
-
 # Using rehydrateChildren
 
-> A working version of this can be seen in the [`ShowMore` demo](/demo/ShowMore)
+> A working version of this can be seen in the [ShowMore demo](/demos/show-more)
 
 Let's take [our `ShowMore` component](/rehydrators/simple), and enhance it.
 

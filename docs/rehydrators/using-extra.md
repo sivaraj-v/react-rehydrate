@@ -1,13 +1,6 @@
----
-name: Using extra
-
-menu: Rehydrators
-order: 6
----
-
 # Using the `extra` argument
 
-> A working version of this can be seen in the [`HelloUser` demo](/demo/HelloUser)
+> A working version of this can be seen in the [Hello User demo](/demos/hello-user)
 
 If you have any page-level state that needs to be available to your components, you can use the `extra` argument - it's the third argument passed to every rehydrator.
 

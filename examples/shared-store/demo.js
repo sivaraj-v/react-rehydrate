@@ -38,8 +38,8 @@ const ThemeSelector = ({ heading }) => {
     >
       <h2>{heading}</h2>
       <p>
-        This widget writes to a shared module-level store. The widget below reads
-        from it even though they live in separate React roots.
+        This widget writes to a shared module-level store. The widget below
+        reads from it even though they live in separate React roots.
       </p>
       <label htmlFor="theme-select">Choose theme:</label>{" "}
       <select
@@ -64,7 +64,11 @@ const ThemedWidget = ({ heading }) => {
   const themeStyles = {
     light: { background: "#fff", color: "#111", border: "1px solid #ddd" },
     dark: { background: "#1a1a2e", color: "#e0e0e0", border: "1px solid #444" },
-    "high-contrast": { background: "#000", color: "#ff0", border: "2px solid #ff0" }
+    "high-contrast": {
+      background: "#000",
+      color: "#ff0",
+      border: "2px solid #ff0"
+    }
   };
 
   return (
@@ -80,8 +84,8 @@ const ThemedWidget = ({ heading }) => {
         ThemeSelector above.
       </p>
       <p>
-        It subscribes to the shared store via{" "}
-        <code>useSyncExternalStore</code> (React 18+).
+        It subscribes to the shared store via <code>useSyncExternalStore</code>{" "}
+        (React 18+).
       </p>
       <p>
         Active theme: <strong>{theme}</strong>

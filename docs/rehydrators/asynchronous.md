@@ -1,13 +1,6 @@
----
-name: Asynchronous rehydrators
-
-menu: Rehydrators
-order: 4
----
-
 # Asynchronous rehydrators
 
-> You may find the [`AsynchronousRehydrator` demo](/demo/AsynchronousRehydrator) useful to see how this works.
+> A working version of this can be seen in the [Asynchronous demo](/demos/asynchronous)
 
 Rehydrators are expected to use `Promise`s. The main reason for this is to make use of the `import()` function, which is available in many module bundlers like `webpack`. It can help to keep your initial bundle size small, and only load component code as you need it.
 

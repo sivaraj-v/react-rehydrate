@@ -1,54 +1,48 @@
-# `rehydrate`
+# The rehydrate function
 
-```ts
-rehydrate(rootNode, rehydrators, options?)
+```javascript
+rehydrate(rootNode, rehydrators, options);
 ```
+
+## Contract
+
+When run, `rehydrate` will convert the contents of any [markup containers](/containers) into React elements.
 
 ## Parameters
 
-- `rootNode`: DOM node to start scanning from.
-- `rehydrators`: map of rehydratable names to async rehydrator functions.
-- `options`:
-  - `extra`: shared page-level values passed as third argument to each rehydrator.
+* `rootNode`: a node on your page where `react-rehydrate` should start looking for markup containers.
 
-## Rehydrator signature
+  A simple implementation would have the first child of your `<body />` element be a `<div id="root" />`, and put all your markup inside. Then, you can use `document.getElementById("root")` as your `rootNode`.
+* `rehydrators`: a keyed object containing your rehydrator functions, each matching the [rehydrator interface](/api/rehydrator)
 
-```ts
-(domNode, rehydrateChildren, extra) => Promise<ReactElement>
-```
+  A key of `SiteHeader` means that the provided rehydrator will be run for an element with `data-rehydratable="SiteHeader"` set.
+* `options`: an object that configures `rehydrate()`
+  * `extra`: an object that will be passed to each [rehydrator](/api/rehydrator). Can be used to provide some page state information to your components, such as user information or analytics hooks.
 
-- `domNode`: source element with `data-rehydratable`.
-- `rehydrateChildren`: helper for nested child conversion.
-- `extra`: optional context object from `options.extra`.
+## Return value
 
-## Example
+Returns a `Promise` that resolves when `rootNode` has been rehydrated.
+
+## Example usage
 
 ```javascript
-import { rehydrate } from "react-from-markup";
-import rehydrators from "./rehydrators";
+import rehydrate from "@sivaraj-v/react-rehydrate";
+import { rehydrator as siteHeaderRehydrator } from "./components/SiteHeader";
+import { rehydrator as videoPlayerRehydrator } from "./components/VideoPlayer";
 
-// Pass page-level context to all rehydrators
-rehydrate({
-  container: document.querySelector('[data-react-from-markup-container]'),
-  rehydrators,
-  options: {
+rehydrate(
+  document.getElementById("root"),
+  {
+    SiteHeader: siteHeaderRehydrator,
+    VideoPlayer: videoPlayerRehydrator
+  },
+  {
     extra: {
-      user: { id: "123", name: "Alice" },
-      config: { apiUrl: "https://api.example.com" }
+      user: {
+        userName: document.body.dataset.userName,
+        userId: document.body.dataset.userId
+      }
     }
   }
-});
+)
 ```
-
-All rehydrators now receive this data:
-
-```javascript
-const myRehydrator = async (domNode, rehydrateChildren, extra) => {
-  // extra.user and extra.config are available
-  return <MyComponent user={extra.user} apiUrl={extra.config.apiUrl} />;
-};
-```
-
-## See Also
-
-For detailed patterns and real-world examples, see [Passing Page Context with `extra`](/guides/page-context.md).

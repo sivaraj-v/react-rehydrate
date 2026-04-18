@@ -1,14 +1,36 @@
 import React, { useState, useTransition } from "react";
 
 const TECH_TOPICS = [
-  "React", "TypeScript", "JavaScript", "Node.js", "GraphQL",
-  "REST API", "PostgreSQL", "MongoDB", "Redis", "Docker",
-  "Kubernetes", "CI/CD pipelines", "Unit testing", "Performance profiling",
-  "Security hardening", "Accessibility", "Internationalisation",
-  "State management", "Client-side routing", "Server-side rendering",
-  "Static site generation", "Edge functions", "WebSockets",
-  "Service workers", "Progressive enhancement", "CSS modules",
-  "Design systems", "Component libraries", "Monorepos", "Code splitting"
+  "React",
+  "TypeScript",
+  "JavaScript",
+  "Node.js",
+  "GraphQL",
+  "REST API",
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "Docker",
+  "Kubernetes",
+  "CI/CD pipelines",
+  "Unit testing",
+  "Performance profiling",
+  "Security hardening",
+  "Accessibility",
+  "Internationalisation",
+  "State management",
+  "Client-side routing",
+  "Server-side rendering",
+  "Static site generation",
+  "Edge functions",
+  "WebSockets",
+  "Service workers",
+  "Progressive enhancement",
+  "CSS modules",
+  "Design systems",
+  "Component libraries",
+  "Monorepos",
+  "Code splitting"
 ];
 
 const SearchFilter = ({ heading }) => {

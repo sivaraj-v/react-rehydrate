@@ -28,7 +28,10 @@ class WidgetErrorBoundary extends Component {
           data-count={initialCount}
         >
           <h2>{title}</h2>
-          <p>This widget failed during rendering, but the rest of the page stayed interactive.</p>
+          <p>
+            This widget failed during rendering, but the rest of the page stayed
+            interactive.
+          </p>
           <button onClick={this.reset}>Reset widget</button>
         </section>
       );
@@ -58,7 +61,9 @@ const ErrorBoundaryWidget = ({ title, initialCount }) => {
       <button onClick={() => setCount(currentCount => currentCount + 1)}>
         Add item
       </button>
-      <button onClick={() => setShouldCrash(true)}>Simulate rendering failure</button>
+      <button onClick={() => setShouldCrash(true)}>
+        Simulate rendering failure
+      </button>
     </section>
   );
 };
@@ -90,4 +95,8 @@ export const markup = `
   </div>
 `;
 
-export { ErrorBoundaryWidget, errorBoundaryWidgetRehydrator, WidgetErrorBoundary };
+export {
+  ErrorBoundaryWidget,
+  errorBoundaryWidgetRehydrator,
+  WidgetErrorBoundary
+};

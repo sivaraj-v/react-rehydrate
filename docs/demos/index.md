@@ -1,6 +1,6 @@
 # Demos
 
-All interactive examples are available in the live [Examples App](../../examples/index.html).
+All interactive examples are available in the [Examples App on GitHub](https://github.com/sivaraj-v/react-rehydrate/tree/main/examples).
 
 ## Getting Started
 
@@ -15,7 +15,7 @@ All interactive examples are available in the live [Examples App](../../examples
 yarn examples:dev
 ```
 
-Then visit http://localhost:5173 to see all interactive demos.
+Then visit `http://localhost:5173` to see all interactive demos running locally.
 
 ## All Demos
 

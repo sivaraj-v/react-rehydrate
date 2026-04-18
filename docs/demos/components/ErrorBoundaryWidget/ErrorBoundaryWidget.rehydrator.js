@@ -1,5 +1,7 @@
 import React from "react";
-import ErrorBoundaryWidget, { WidgetErrorBoundary } from "./ErrorBoundaryWidget";
+import ErrorBoundaryWidget, {
+  WidgetErrorBoundary
+} from "./ErrorBoundaryWidget";
 
 export default async domNode => {
   const title = domNode.getAttribute("data-title");

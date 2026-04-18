@@ -1,10 +1,3 @@
----
-name: Rehydrator Interface
-
-menu: API
-route: /api/rehydrator
----
-
 # Rehydrator Interface
 
 ```javascript

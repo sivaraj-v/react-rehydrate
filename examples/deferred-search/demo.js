@@ -24,8 +24,8 @@ const DeferredSearch = ({ heading }) => {
     >
       <h2>{heading}</h2>
       <p>
-        <code>useDeferredValue</code> keeps typing responsive while the heavy list
-        rendering follows a deferred query.
+        <code>useDeferredValue</code> keeps typing responsive while the heavy
+        list rendering follows a deferred query.
       </p>
       <input
         aria-label="Search items"
@@ -41,7 +41,8 @@ const DeferredSearch = ({ heading }) => {
         ))}
       </ul>
       <p>
-        Showing {filtered.length} items using query <strong>{deferredQuery || "(all)"}</strong>
+        Showing {filtered.length} items using query{" "}
+        <strong>{deferredQuery || "(all)"}</strong>
       </p>
     </section>
   );
