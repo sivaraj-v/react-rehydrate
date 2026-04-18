@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extra Context Beta Variant</title>
+  </head>
+  <body data-example="extra-context-beta">
+    <div id="app">
+      <div data-react-from-markup-container>
+        <section
+          class="ContextCard"
+          data-rehydratable="ContextAware"
+          data-fallback-name="Guest"
+        >
+          <h2>Loading personalized dashboard...</h2>
+          <p>This area changes based on options.extra values.</p>
+        </section>
+
+        <section class="ContextLegend" data-rehydratable="ContextLegend">
+          <h3>Context Inputs</h3>
+          <p>Waiting for rehydration context...</p>
+        </section>
+
+        <section class="AnalyticsCard" data-rehydratable="AnalyticsTracker">
+          <h3>Analytics</h3>
+          <p>Status: pending</p>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+---
+name: Markup containers
+
+route: /containers
+---
+
+# Markup containers
+
+`react-rehydrate` will only rehydrate elements inside a _markup container_.
+
+A markup container is simply a DOM element that has a `data-react-from-markup-container` attribute on it.
+
+You can have as many markup containers on your page as you like.
+
+That is particularly useful for modern React setups where independent widgets should mount separately and keep their own local state.
+
+
+## Declaring a container
+
+In your markup, simply wrap any elements that you wish to rehydrate in a container:
+
+```html
+<div data-react-from-markup-container>
+  <p>When the page loads, I'll be turned into a static React node.</p>
+</div>
+```

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concurrent Search Example</title>
+  </head>
+  <body data-example="concurrent-search">
+    <div id="app">
+      <div data-react-from-markup-container>
+        <section
+          class="SearchFilter"
+          data-rehydratable="SearchFilter"
+          data-heading="Technology topics"
+        >
+          <h2>Technology topics</h2>
+          <input type="search" placeholder="Type to filter..." />
+          <ul>
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

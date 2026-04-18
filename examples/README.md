@@ -12,11 +12,25 @@ Structure:
 
 - `main.js`: shared browser entry that reads the current example page and runs `react-rehydrate`.
 - `demo-registry.js`: combined rehydrator registry assembled from the demo source modules.
+
 Run In Development:
 
 - Open the Vite URL it prints, usually `http://localhost:5173/`.
 - Demo routes:
 - `/`
+- `/optimistic-updates/`
+- `/action-state-form/`
+- `/deferred-search/`
+- `/automatic-batching/`
+- `/suspense-lazy/`
+- `/error-boundary/`
+- `/accessible-disclosure/`
+- `/isolated-widgets/`
+- `/data-fetch/`
+- `/validated-form/`
+- `/concurrent-search/`
+- `/undo-counter/`
+- `/shared-store/`
 - `/static/`
 - `/hello-user/`
 - `/show-more-text/`
@@ -44,6 +58,19 @@ Important:
 
 Included examples:
 
+- `optimistic-updates`: optimistic posting flow powered by `useOptimistic`.
+- `action-state-form`: form submit state managed by `useActionState`.
+- `deferred-search`: expensive list rendering controlled with `useDeferredValue`.
+- `automatic-batching`: async state updates committed together via automatic batching.
+- `suspense-lazy`: a lazily loaded client panel rendered behind `React.Suspense`.
+- `error-boundary`: a rehydrated widget wrapped in an error boundary fallback.
+- `accessible-disclosure`: an accessible disclosure pattern powered by `useId`.
+- `isolated-widgets`: multiple independent containers with isolated React state.
+- `data-fetch`: server markup that upgrades to live data after rehydration.
+- `validated-form`: a validated form with accessible error messaging.
+- `concurrent-search`: a search UI that marks updates as non-urgent with `startTransition`.
+- `undo-counter`: reducer-driven state transitions with undo history.
+- `shared-store`: separate roots synchronized via `useSyncExternalStore`.
 - `static`: plain static markup inside a rehydration container.
 - `hello-user`: markup for a component that receives its final value from `options.extra`.
 - `show-more-text`: a simple string prop stored in a `data-` attribute.

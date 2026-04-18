@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Disclosure Example</title>
+  </head>
+  <body data-example="accessible-disclosure">
+    <div id="app">
+      <div data-react-from-markup-container>
+        <section
+          class="AccessibleDisclosure"
+          data-rehydratable="AccessibleDisclosure"
+          data-question="How is this connected for assistive technology?"
+          data-answer="This disclosure uses React useId so the button and region stay correctly associated after rehydration."
+        >
+          <h2>How is this connected for assistive technology?</h2>
+          <button aria-expanded="false">Show details</button>
+          <div hidden>
+            <p>This disclosure uses React useId so the button and region stay correctly associated after rehydration.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

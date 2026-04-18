@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undo Counter Example</title>
+  </head>
+  <body data-example="undo-counter">
+    <div id="app">
+      <div data-react-from-markup-container>
+        <section
+          class="UndoCounter"
+          data-rehydratable="UndoCounter"
+          data-title="Step counter"
+          data-count="0"
+        >
+          <h2>Step counter</h2>
+          <p class="UndoCounter-value">0</p>
+          <div class="UndoCounter-controls">
+            <button>&#x2212;</button>
+            <button>+</button>
+            <button disabled>Undo</button>
+            <button>Reset</button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>
