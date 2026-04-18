@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shared Store Example</title>
+  </head>
+  <body data-example="shared-store">
+    <div id="app">
+      <div data-react-from-markup-container>
+        <section
+          class="ThemeSelector"
+          data-rehydratable="ThemeSelector"
+          data-heading="Theme preferences"
+        >
+          <h2>Theme preferences</h2>
+          <label for="theme-select">Choose theme:</label>
+          <select id="theme-select">
+            <option value="light" selected>Light</option>
+            <option value="dark">Dark</option>
+            <option value="high-contrast">High contrast</option>
+          </select>
+        </section>
+      </div>
+      <div data-react-from-markup-container>
+        <section
+          class="ThemedWidget"
+          data-rehydratable="ThemedWidget"
+          data-heading="Preview widget"
+        >
+          <h2>Preview widget</h2>
+          <p>This widget is in a separate React root.</p>
+          <p>It reads from the shared store via useSyncExternalStore.</p>
+          <p>Active theme: <strong>light</strong></p>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

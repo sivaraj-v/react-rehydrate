@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Fetch After Rehydration Example</title>
+  </head>
+  <body data-example="data-fetch">
+    <div id="app">
+      <div data-react-from-markup-container>
+        <div
+          class="DataFetchCard"
+          data-rehydratable="DataFetchCard"
+          data-product-id="product-1"
+          data-fallback-title="Analytics Dashboard"
+        >
+          <p class="DataFetchCard-status">Loading live data...</p>
+          <h2>Analytics Dashboard</h2>
+          <p>Fetching details from server.</p>
+        </div>
+      </div>
+      <div data-react-from-markup-container>
+        <div
+          class="DataFetchCard"
+          data-rehydratable="DataFetchCard"
+          data-product-id="product-2"
+          data-fallback-title="Report Builder"
+        >
+          <p class="DataFetchCard-status">Loading live data...</p>
+          <h2>Report Builder</h2>
+          <p>Fetching details from server.</p>
+        </div>
+      </div>
+      <div data-react-from-markup-container>
+        <div
+          class="DataFetchCard"
+          data-rehydratable="DataFetchCard"
+          data-product-id="product-3"
+          data-fallback-title="Audit Log"
+        >
+          <p class="DataFetchCard-status">Loading live data...</p>
+          <h2>Audit Log</h2>
+          <p>Fetching details from server.</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

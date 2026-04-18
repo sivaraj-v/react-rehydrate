@@ -1,4 +1,4 @@
-import rehydrate from "../packages/react-rehydrate/src/index.ts";
+import rehydrate from "../packages/react-from-markup/src/index.ts";
 import { exampleRegistry, getRehydrators } from "./demo-registry";
 
 const run = async () => {

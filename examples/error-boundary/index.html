@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Boundary Example</title>
+  </head>
+  <body data-example="error-boundary">
+    <div id="app">
+      <div data-react-from-markup-container>
+        <section
+          class="ErrorBoundaryWidget"
+          data-rehydratable="ErrorBoundaryWidget"
+          data-title="Background jobs"
+          data-count="3"
+        >
+          <h2>Background jobs</h2>
+          <p>Queued items: 3</p>
+          <button>Add item</button>
+          <button>Simulate rendering failure</button>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

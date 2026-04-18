@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suspense And Lazy Example</title>
+  </head>
+  <body data-example="suspense-lazy">
+    <div id="app">
+      <div data-react-from-markup-container>
+        <section
+          class="SuspenseGreeting"
+          data-rehydratable="SuspenseGreeting"
+          data-headline="Analytics summary"
+          data-message="The detailed KPI panel was loaded lazily after the container became interactive."
+        >
+          <p class="SuspenseGreeting-eyebrow">Loading interactive module...</p>
+          <h2>Analytics summary</h2>
+          <p>Preparing the client bundle for this panel.</p>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>
