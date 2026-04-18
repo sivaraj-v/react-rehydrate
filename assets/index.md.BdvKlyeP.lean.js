@@ -1,0 +1,1 @@
+import{_ as a,o as t,c as r,ag as i}from"./chunks/framework.YEBM7mz9.js";const m=JSON.parse('{"title":"React Rehydrate","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),o={name:"index.md"};function n(s,e,l,c,h,d){return t(),r("div",null,[...e[0]||(e[0]=[i("",9)])])}const u=a(o,[["render",n]]);export{m as __pageData,u as default};

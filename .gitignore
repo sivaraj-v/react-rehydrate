@@ -1,0 +1,30 @@
+# Dependency directories
+node_modules
+
+# Build output
+dist
+lib
+
+# Coverage reports
+coverage
+
+# VitePress build artifacts and cache
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# OS and editor metadata
+.DS_Store
+.vscode/
+.idea/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+
+# Misc
+cache

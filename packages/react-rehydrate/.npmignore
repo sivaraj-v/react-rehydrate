@@ -1,0 +1,34 @@
+# Exclude source files
+src/
+
+# Exclude tests
+**/*.test.*
+**/*.spec.*
+__tests__/
+
+# Exclude build artifacts and caches
+.nyc_output/
+coverage/
+*.tgz
+*.tar.gz
+
+# Exclude development files
+.github/
+docs/
+examples/
+scripts/
+
+# Exclude config files not needed for consumers
+tsconfig.json
+tslint.json
+jest.config.js
+.prettierrc*
+.eslintrc*
+
+# Exclude lock files
+yarn.lock
+package-lock.json
+
+# Exclude README and other docs if not wanted, but typically include
+# README.md
+# CHANGELOG.md
