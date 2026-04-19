@@ -9,9 +9,10 @@ A container is defined by adding the `data-react-from-markup-container` attribut
 ```html
 <div data-react-from-markup-container>
   <!-- React will scan inside this div for rehydratable components -->
-  <p>This is a static paragraph.</p>
+  <h3>Search Results</h3>
+  <p>Showing 1-12 of 348 items.</p>
   
-  <div data-rehydratable="Counter" data-start="0"></div>
+  <div data-rehydratable="ProductFilter" data-category="electronics" data-sort="price_asc"></div>
 </div>
 ```
 

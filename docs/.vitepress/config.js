@@ -34,45 +34,60 @@ export default {
     ],
     sidebar: {
       "/": [
-        { text: "Introduction", link: "/" },
-        { text: "Architecture", link: "/architecture" },
-        { text: "Installation", link: "/installation" },
-        { text: "Markup Containers", link: "/containers" },
         {
-          text: "API Reference",
+          text: "Getting Started",
           items: [
-            { text: "rehydrate()", link: "/api/rehydrate" },
-            { text: "Rehydrator Interface", link: "/api/rehydrator" }
+            { text: "Introduction", link: "/" },
+            { text: "Installation", link: "/installation" },
+            { text: "Script Integration", link: "/guides/script-integration" }
           ]
         },
         {
-          text: "Rehydrators",
+          text: "The Blueprint",
+          items: [
+            { text: "Architecture Overview", link: "/architecture" },
+            { text: "Value Proposition", link: "/guides/value-proposition" }
+          ]
+        },
+        {
+          text: "Core Fundamentals",
+          items: [
+            { text: "Markup Containers", link: "/containers" },
+            { text: "Rehydrator Interface", link: "/api/rehydrator" },
+            { text: "rehydrate() API", link: "/api/rehydrate" }
+          ]
+        },
+        {
+          text: "Deep Dives",
           collapsed: false,
           items: [
-            { text: "Overview", link: "/rehydrators/index" },
-            { text: "Simple Rehydrator", link: "/rehydrators/simple" },
-            { text: "Asynchronous", link: "/rehydrators/asynchronous" },
-            { text: "Using Extra Context", link: "/rehydrators/using-extra" },
-            {
-              text: "Nested Children",
-              link: "/rehydrators/using-rehydratechildren"
-            },
-            {
-              text: "Dynamic Names",
-              link: "/rehydrators/dynamic-rehydratable-name"
-            }
+            { text: "Dynamic Resolution", link: "/rehydrators/dynamic-rehydratable-name" },
+            { text: "Asynchronous Rehydration", link: "/rehydrators/asynchronous" },
+            { text: "Nested Children", link: "/rehydrators/using-rehydratechildren" },
+            { text: "Using Shared Context", link: "/rehydrators/using-extra" },
+            { text: "Simple Implementation", link: "/rehydrators/simple" }
           ]
         },
         {
-          text: "Demos",
+          text: "Technical Guides",
+          collapsed: true,
+          items: [
+            { text: "Guides Overview", link: "/guides/index" },
+            { text: "Passing Page Context", link: "/guides/page-context" },
+            { text: "Custom Utilities", link: "/guides/custom-utilities" },
+            { text: "Error Handling", link: "/guides/error-handling" },
+            { text: "Performance", link: "/guides/performance" },
+            { text: "Progressive Enhancement", link: "/guides/progressive-enhancement" },
+            { text: "Testing", link: "/guides/testing" }
+          ]
+        },
+        {
+          text: "Demos & Blueprints",
           collapsed: true,
           items: [
             { text: "Demos Overview", link: "/demos/index" },
             { text: "Hello User", link: "/demos/hello-user" },
-            {
-              text: "Accessible Disclosure",
-              link: "/demos/accessible-disclosure"
-            },
+            { text: "Accessible Disclosure", link: "/demos/accessible-disclosure" },
             { text: "Action State Form", link: "/demos/action-state-form" },
             { text: "Asynchronous", link: "/demos/asynchronous" },
             { text: "Automatic Batching", link: "/demos/automatic-batching" },
@@ -92,8 +107,7 @@ export default {
             { text: "Suspense + Lazy", link: "/demos/suspense-lazy" },
             { text: "Undo Counter", link: "/demos/undo-counter" }
           ]
-        },
-        { text: "Guides", link: "/guides/index" }
+        }
       ]
     },
     search: {

@@ -1,0 +1,81 @@
+/**
+ * Custom CSS for React Rehydrate Documentation
+ * Focus on responsiveness and modern aesthetics.
+ */
+
+/* Responsive Images */
+.vp-doc img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive Tables */
+/* We use a more robust way to ensure scrolling without breaking table layout */
+.vp-doc table {
+  display: table; /* Reset to table to maintain proper alignment */
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+/* VitePress automatically wraps tables in a div if needed, 
+   but we'll force the container to scroll if it's too wide. */
+.vp-doc .vp-adaptive-table,
+.vp-doc > div > table,
+.vp-doc table {
+  display: block;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ultra-compact table cells consistently */
+.vp-doc th,
+.vp-doc td {
+  padding: 6px 10px !important;
+  font-size: 0.75rem;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* Match Navigation font size to table */
+.VPNavBarMenuLink,
+.VPNavBarMenu .VPLink,
+.VPLocalNav .VPLink,
+.VPMobileMenu .VPLink,
+.VPNavBar .content {
+  font-size: 0.75rem !important;
+}
+
+/* Top Right Menu specific alignment for small screens */
+@media (max-width: 480px) {
+  .VPNavBar .container {
+    padding: 0 12px !important;
+  }
+  
+  .VPNavBar .content {
+    gap: 8px;
+  }
+
+  /* Make the hamburger menu more compact */
+  .VPNavBarHamburger {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* Improvement for Mermaid diagrams responsiveness */
+.mermaid {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Refined Dark Mode Transitions */
+:root {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Layout adjustments for better content containment on small screens */
+@media (max-width: 768px) {
+  .vp-doc {
+    padding: 0 1rem;
+  }
+}

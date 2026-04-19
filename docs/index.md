@@ -4,32 +4,50 @@ aside: false
 ---
 
 <style>
+/* Responsive overrides for the full-width home page */
 :root {
   --vp-doc-max-width: 100% !important;
 }
+
 @media (min-width: 960px) {
   .VPDoc .container {
     margin: 0 !important;
     max-width: none !important;
   }
 }
-th, td {
-  white-space: nowrap !important;
-}
-.vp-doc table {
-  display: table;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 1.5rem 0;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  overflow: hidden;
-}
-.vp-doc th {
-  background-color: var(--vp-c-bg-soft);
-  font-weight: 700;
-  color: var(--vp-c-brand);
+
+@media (max-width: 768px) {
+  /* Ultra-compact and premium mobile comparison tables */
+  .vp-doc table {
+    margin: 1.5rem 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    border: 1px solid var(--vp-c-divider);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 0.7rem;
+    line-height: 1.2;
+    display: block;
+    overflow-x: auto; /* Horizontal scroll for tiny screens */
+  }
+
+  .vp-doc th, .vp-doc td {
+    padding: 6px 8px !important;
+    border: none !important;
+    border-bottom: 1px solid var(--vp-c-divider) !important;
+  }
+
+  .vp-doc tr:last-child td {
+    border-bottom: none !important;
+  }
+
+  .vp-doc th {
+    background-color: var(--vp-c-bg-soft);
+    font-weight: 700;
+    color: var(--vp-c-brand-1);
+    white-space: nowrap;
+  }
 }
 </style>
 
@@ -51,34 +69,34 @@ Modern engineering is moving away from Monolithic SPAs toward **Selective Hydrat
 
 ### Enterprise Technical Comparison Matrix
 
-| Technical Dimension | Legacy Monolith (jQuery/Server) | Modern SPA (Next/CRA/Vite) | React Rehydrate (Controlled Islands) |
+| Technical Dimension | React Rehydrate (Controlled Islands) | Legacy Monolith (jQuery/Server) | Modern SPA (Next/CRA/Vite) |
 | :--- | :--- | :--- | :--- |
-| **SEO & Indexability** | ✅ Perfect | ⚠️ High SSR Overhead | ✅ Native / Instant |
-| **SMM Previews (OG Tags)** | ✅ Perfect | ⚠️ Virtual / Meta Tags | ✅ Static-First Ready |
-| **Hydration Strategy** | ❌ None | ⚠️ Full Body Re-render | ✅ Selective & Fragmented |
-| **Core Web Vitals (CLS)** | ✅ High Stability | ❌ Frequent Hydration Shifts | ✅ Zero-CLS Stability |
-| **Content Security Policy** | ❌ Large Attack Surface | ⚠️ Moderate | ✅ Sanitized Bridge Root |
-| **Time to Interactive (TTI)** | ✅ Fast | ❌ Slow (Total JS Execution) | ✅ Optimized Selective Loading |
-| **Memory Lifecycle** | ✅ Efficient | ⚠️ Risk of Memory Leaks | ✅ Disposable / GC-Ready Roots |
-| **Development Experience** | ❌ Poor / Stale | ✅ Excellent | ✅ Full Vite / HMR Support |
-| **Legacy JS Interop** | ✅ Native | ❌ High Conflict | ✅ Isolated Root Coexistence |
-| **Micro-Frontend Autonomy** | ❌ Monolithic | ⚠️ Orchestrated | ✅ Drop-in Independent Roots |
-| **Production Resilience** | ❌ No Safety Boundaries | ✅ High | ✅ Multi-root Error Isolation |
-| **Discovery Performance** | ✅ Instant | ❌ High Overhead | ✅ O(n) Non-blocking Scan |
-| **React 19 Native Actions** | ❌ Incompatible | ✅ Native | ✅ Full Modern Hook Support |
+| **SEO & Indexability** | ✅ Native / Instant | ✅ Perfect | ⚠️ High SSR Overhead |
+| **SMM Previews (OG Tags)** | ✅ Static-First Ready | ✅ Perfect | ⚠️ Virtual / Meta Tags |
+| **Hydration Strategy** | ✅ Selective & Fragmented | ❌ None | ⚠️ Full Body Re-render |
+| **Core Web Vitals (CLS)** | ✅ Zero-CLS Stability | ✅ High Stability | ❌ Frequent Hydration Shifts |
+| **Content Security Policy** | ✅ Sanitized Bridge Root | ❌ Large Attack Surface | ⚠️ Moderate |
+| **Time to Interactive (TTI)** | ✅ Optimized Selective Loading | ✅ Fast | ❌ Slow (Total JS Execution) |
+| **Memory Lifecycle** | ✅ Disposable / GC-Ready Roots | ✅ Efficient | ⚠️ Risk of Memory Leaks |
+| **Development Experience** | ✅ Full Vite / HMR Support | ❌ Poor / Stale | ✅ Excellent |
+| **Legacy JS Interop** | ✅ Isolated Root Coexistence | ✅ Native | ❌ High Conflict |
+| **Micro-Frontend Autonomy** | ✅ Drop-in Independent Roots | ❌ Monolithic | ⚠️ Orchestrated |
+| **Production Resilience** | ✅ Multi-root Error Isolation | ❌ No Safety Boundaries | ✅ High |
+| **Discovery Performance** | ✅ O(n) Non-blocking Scan | ✅ Instant | ❌ High Overhead |
+| **React 19 Native Actions** | ✅ Full Modern Hook Support | ❌ Incompatible | ✅ Native |
 
 ---
 
 ## ⚡ React Rehydrate vs. React Server Components (RSC)
 
-| Dimension | React Server Components (RSC) | React Rehydrate |
+| Dimension | React Rehydrate | React Server Components (RSC) |
 | :--- | :--- | :--- |
-| **Target Environment** | Greenfield / Modern Server | Brownfield / Legacy / Any CMS |
-| **Server Requirement** | Node.js (High integration) | Any (PHP, Ruby, .NET, Static) |
-| **Build Dependency** | High (Bundler-heavy) | Low (Bridge-only architecture) |
-| **Hydration Pattern** | Streamed | Selective / Partially Resumable |
-| **Legacy Interop** | ❌ High Friction | ✅ Excellence by Design |
-| **HMR Latency** | Low | ✅ Near-Zero (Vite-powered) |
+| **Target Environment** | Brownfield / Legacy / Any CMS | Greenfield / Modern Server |
+| **Server Requirement** | Any (PHP, Ruby, .NET, Static) | Node.js (High integration) |
+| **Build Dependency** | Low (Bridge-only architecture) | High (Bundler-heavy) |
+| **Hydration Pattern** | Selective / Partially Resumable | Streamed |
+| **Legacy Interop** | ✅ Excellence by Design | ❌ High Friction |
+| **HMR Latency** | ✅ Near-Zero (Vite-powered) | Low |
 
 ---
 
@@ -108,21 +126,21 @@ By executing less JavaScript and avoiding full page re-renders, `react-rehydrate
 
 ## 🚀 Why React Rehydrate vs. Other Libraries?
 
-| High-Level Feature | Legacy `react-from-markup` | Frameworks (Astro/Qwik) | React Rehydrate |
+| High-Level Feature | React Rehydrate | Legacy `react-from-markup` | Frameworks (Astro/Qwik) |
 | :--- | :--- | :--- | :--- |
-| **React 18/19 Support** | ❌ Stale (V16) | ✅ Full | ✅ Cutting Edge (React 19) |
-| **Migration Risk** | Low | ❌ High (Total rewrite) | ✅ Zero-Friction Drop-in |
-| **Build System** | ✅ Any | ❌ Strict pipeline lock-in | ✅ Build System Agnostic |
-| **Type Integrity** | ❌ 0% Typescript | ✅ High | ✅ Native TS 5.0+ Registry |
-| **Nested Strategy** | ❌ None | ⚠️ Recursive difficulty | ✅ Native Recursive Support |
-| **Resumability Support** | ❌ No | ✅ Selective | ✅ Partial (Post-Discovery) |
+| **React 18/19 Support** | ✅ Cutting Edge (React 19) | ❌ Stale (V16) | ✅ Full |
+| **Migration Risk** | ✅ Zero-Friction Drop-in | Low | ❌ High (Total rewrite) |
+| **Build System** | ✅ Build System Agnostic | ✅ Any | ❌ Strict pipeline lock-in |
+| **Nested Strategy** | ✅ Native Recursive Support | ❌ None | ⚠️ Recursive difficulty |
+| **Resumability Support** | ✅ Partial (Post-Discovery) | ❌ No | ✅ Selective |
 
 ---
 
 ## 📖 Deep Dives
 
-- [**Installation**](/installation) — Set up in under 5 minutes.
-- [**Markup Containers**](/containers) — Architect your island boundaries.
-- [**Rehydrator Interface**](/api/rehydrator) — Master the bridge logic.
-- [**Performance Strategy**](/guides/performance) — Scaling for any volume.
+- [**The Blueprint**](/architecture) — Architectural overview & value proposition.
+- [**Installation**](/installation) — Get started in under 5 minutes.
+- [**Script Integration**](/guides/script-integration) — The path to drop-in interactivity.
+- [**Core Fundamentals**](/containers) — Mastering containers & rehydrators.
+- [**Advanced Patterns**](/rehydrators/dynamic-rehydratable-name) — Dynamic resolution & async loading.
 - [**React 19 Demos**](/demos/index) — Engineering examples in action.

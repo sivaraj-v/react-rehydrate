@@ -24,19 +24,19 @@ Once installed, initialize the rehydration process at your application's entry p
 
 ```javascript
 import rehydrate from "@sivaraj-v/react-rehydrate";
-import { rehydrator as siteHeader } from "./components/SiteHeader";
+import { rehydrator as productReviews } from "./components/ProductReviews";
 
 // Extra state passed to all rehydrators (Enterprise Practice)
 const options = {
   extra: {
     locale: document.documentElement.lang,
-    user: window.__USER_DATA__
+    apiKey: window.__CONFIG__.REVIEWS_API_KEY
   }
 };
 
 rehydrate(
-  document.getElementById("app-root"), 
-  { SiteHeader: siteHeader },
+  document.getElementById("main-content"), 
+  { ProductReviews: productReviews },
   options
 );
 ```

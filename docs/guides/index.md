@@ -7,7 +7,7 @@ Learn practical patterns and advanced techniques for using react-rehydrate.
 Use this minimal setup to pass shared page context into all rehydrators:
 
 ```javascript
-import { rehydrate } from "react-from-markup";
+import rehydrate from "@sivaraj-v/react-rehydrate";
 
 const helloUserRehydrator = async (domNode, rehydrateChildren, extra) => {
 	return <h2>Hello, {extra.user.name}!</h2>;
@@ -35,6 +35,11 @@ Server-side markup:
 ```
 
 For full production patterns, go to the detailed guide below.
+
+## Architectural Strategy
+
+- [**Global Value Proposition**](./value-proposition.md) — Performance, Security, and SEO at scale.
+- [**Script Integration**](./script-integration.md) — Dropping React into CMS & Portals.
 
 ## Core Concepts
 
